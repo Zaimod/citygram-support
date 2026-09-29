@@ -14,8 +14,8 @@ from inside the app, and from the Google AdMob console.
 ## Files
 
 ```
-index.html      Support page — contact, FAQ
-privacy.html    Privacy Policy — GDPR, international transfers, US privacy
+index.html           Support page — contact, FAQ
+privacy/index.html   Privacy Policy — GDPR, international transfers, US privacy
 .nojekyll       Disables Jekyll processing; files are served as-is
 ```
 
@@ -41,8 +41,8 @@ Verify the result rather than trusting the browser, which caches aggressively:
 curl -sI https://zaimod.github.io/citygram-support/privacy | head -1
 ```
 
-When changing the Privacy Policy, bump the "Last updated" date at the top of
-the page — App Review and the policy's own Section 7 both rely on it.
+When changing the Privacy Policy, bump the "Last updated" date in the page
+header — App Review and the policy's own Section 7 both rely on it.
 
 ## Notes
 

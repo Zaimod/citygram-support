@@ -1,453 +1,632 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Citygram — Privacy Policy</title>
 <meta name="description" content="How Citygram collects, uses and protects your data.">
+<meta name="theme-color" content="#1B1548">
+<link rel="icon" type="image/png" href="https://zaimod.github.io/favicon.png">
+<link rel="apple-touch-icon" href="https://zaimod.github.io/apple-touch-icon.png">
+<link rel="canonical" href="https://zaimod.github.io/citygram-support/privacy/">
 <style>
   :root {
     --indigo: #3C3489;
     --indigo-soft: #7F77DD;
+    --night: #1B1548;
+    --night-deep: #110D33;
     --bg: #FAFAF8;
     --surface: #FFFFFF;
+    --parchment: #F0EEE8;
     --ink: #1A1A18;
     --ink-soft: #6B6A64;
-    --rule: #E3E1DA;
+    --rule: #D3D1C7;
+    --th: #F2F1EC;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --indigo: #9E97F0;
+      --bg: #0E0C1F;
+      --surface: #17142E;
+      --parchment: #1F1B3D;
+      --ink: #EDECF5;
+      --ink-soft: #A5A2B8;
+      --rule: #2E2A52;
+      --th: #1F1B3D;
+    }
   }
 
   * { box-sizing: border-box; }
-
-  html { -webkit-text-size-adjust: 100%; }
-
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   body {
     margin: 0;
-    padding: 48px 24px 72px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background: var(--bg);
     color: var(--ink);
-    font: 400 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
   }
-
-  main {
-    max-width: 720px;
-    margin: 0 auto;
+  a { color: var(--indigo); text-underline-offset: 2px; text-decoration-thickness: 1px; }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--indigo-soft);
+    outline-offset: 3px;
+    border-radius: 6px;
   }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  .narrow { max-width: 760px; }
 
-  .badge {
+  /* ─── Header band ─────────────────────────────────────── */
+  .hero {
+    background:
+      radial-gradient(ellipse 60% 90% at 25% 30%, rgba(127,119,221,0.28), transparent 70%),
+      linear-gradient(170deg, var(--night) 0%, var(--night-deep) 100%);
+    color: #F1F0FA;
+    padding: 20px 0 56px;
+  }
+  .nav {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 56px;
-    height: 56px;
-    margin-bottom: 28px;
-    border-radius: 14px;
-    background: var(--indigo);
-    color: #fff;
-    font-size: 20px;
+    justify-content: space-between;
+    margin-bottom: 48px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    font-size: 18px;
   }
-
-  h1 {
-    margin: 0 0 6px;
-    font-size: 34px;
-    line-height: 1.2;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+  .brand img { width: 36px; height: 36px; border-radius: 9px; }
+  .nav-links { display: flex; gap: 20px; font-size: 15px; }
+  .nav-links a { color: #C9C6E8; text-decoration: none; }
+  .nav-links a:hover, .nav-links a[aria-current="page"] { color: #FFFFFF; }
+  .nav-links a[aria-current="page"] { font-weight: 600; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #B7B1F5;
+    margin-bottom: 12px;
   }
-
-  .meta {
-    margin: 0 0 28px;
-    color: var(--ink-soft);
-    font-size: 15px;
+  .hero h1 {
+    font-size: clamp(34px, 5vw, 50px);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    margin: 0 0 14px;
   }
+  .hero p { font-size: 18px; color: #C9C6E8; margin: 0; max-width: 34em; }
 
-  .lede {
-    margin: 0 0 40px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--rule);
-    color: var(--ink-soft);
-  }
+  main { padding: 56px 0 80px; }
 
-  h2 {
-    margin: 44px 0 14px;
-    font-size: 22px;
-    line-height: 1.3;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-  }
-
-  h3 {
-    margin: 30px 0 10px;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--indigo);
-  }
-
-  p { margin: 0 0 16px; }
-
-  ul {
-    margin: 0 0 16px;
-    padding-left: 22px;
-  }
-
-  li { margin-bottom: 9px; }
-
-  a {
-    color: var(--indigo);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-  }
-
-  a:hover { color: var(--indigo-soft); }
-
-  a:focus-visible {
-    outline: 2px solid var(--indigo);
-    outline-offset: 2px;
-    border-radius: 2px;
-  }
-
-  .table-wrap {
-    margin: 0 0 20px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
+  /* ─── Cards ───────────────────────────────────────────── */
+  .card {
     background: var(--surface);
     border: 1px solid var(--rule);
-    border-radius: 10px;
+    border-radius: 18px;
+    padding: 24px;
+  }
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px 24px;
+    margin-bottom: 56px;
+  }
+  .contact p { margin: 0; color: var(--ink-soft); }
+  .contact strong { display: block; color: var(--ink); font-size: 18px; margin-bottom: 2px; }
+  .btn {
+    display: inline-block;
+    background: var(--indigo);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 11px 20px;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+  @media (prefers-color-scheme: dark) { .btn { color: var(--night); } }
+  .btn:hover { filter: brightness(1.1); }
+
+  .section-title {
+    font-size: 26px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 0 0 18px;
+  }
+
+  /* FAQ */
+  .faq { display: grid; gap: 10px; }
+  .faq details {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 0 22px;
+  }
+  .faq summary {
+    cursor: pointer;
+    list-style: none;
+    font-weight: 600;
+    padding: 18px 28px 18px 0;
+    position: relative;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "";
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--ink-soft);
+    border-bottom: 2px solid var(--ink-soft);
+    transform: translateY(-70%) rotate(45deg);
+    transition: transform 0.15s ease;
+  }
+  .faq details[open] summary::after { transform: translateY(-30%) rotate(225deg); }
+  .faq details p { margin: 0 0 18px; color: var(--ink-soft); }
+
+  .app-cta {
+    margin-top: 56px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--parchment);
+    border-radius: 18px;
+    padding: 20px 24px;
+  }
+  .app-cta img { width: 56px; height: 56px; border-radius: 13px; flex-shrink: 0; }
+  .app-cta div { flex: 1; min-width: 0; }
+  .app-cta strong { display: block; }
+  .app-cta span { color: var(--ink-soft); font-size: 15px; }
+
+  /* ─── Legal text ──────────────────────────────────────── */
+  .legal { font-size: 17px; }
+  .legal .lede {
+    margin: 0 0 32px;
+    color: var(--ink-soft);
+  }
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 18px;
+    padding: 20px 24px;
+    margin: 0 0 48px;
+  }
+  .toc h2 {
+    margin: 0 0 10px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    font-size: 13px !important;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .toc ol {
+    margin: 0;
+    padding-left: 22px;
+    columns: 2;
+    column-gap: 32px;
+    font-size: 15px;
+  }
+  .toc li { margin: 0 0 6px; break-inside: avoid; }
+  .toc a { text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .legal h2 {
+    margin: 48px 0 14px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    font-size: 23px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    scroll-margin-top: 16px;
+  }
+  .legal h3 {
+    margin: 28px 0 8px;
+    font-size: 17px;
+    color: var(--indigo);
+  }
+  .legal p { margin: 0 0 16px; }
+  .legal ul { margin: 0 0 16px; padding-left: 22px; }
+  .legal li { margin-bottom: 9px; }
+  .table-wrap { margin: 0 0 20px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
     overflow: hidden;
     font-size: 15px;
   }
-
   th, td {
     padding: 12px 14px;
     text-align: left;
     vertical-align: top;
     border-bottom: 1px solid var(--rule);
   }
-
-  th {
-    background: #F2F1EC;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-
+  th { background: var(--th); font-weight: 700; white-space: nowrap; }
   tbody tr:last-child td { border-bottom: 0; }
 
+  /* ─── Footer ──────────────────────────────────────────── */
   footer {
-    margin-top: 56px;
-    padding-top: 28px;
     border-top: 1px solid var(--rule);
+    padding: 32px 0 48px;
+    font-size: 14px;
     color: var(--ink-soft);
-    font-size: 15px;
   }
-
-  footer p { margin-bottom: 8px; }
+  .foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .foot p { margin: 0 0 4px; }
+  .foot nav { display: flex; flex-wrap: wrap; gap: 20px; }
+  .foot a { color: var(--ink-soft); }
+  .foot a:hover { color: var(--ink); }
 
   @media (max-width: 600px) {
-    body { padding: 32px 18px 56px; font-size: 16px; }
-    h1 { font-size: 28px; }
-    h2 { font-size: 20px; }
+    .wrap { padding: 0 16px; }
+    .nav { margin-bottom: 36px; }
+    .nav-links { gap: 16px; }
+    .hero { padding-bottom: 44px; }
+    .hero p { font-size: 17px; }
+    main { padding: 40px 0 56px; }
+    .legal { font-size: 16px; }
+    .toc ol { columns: 1; }
+    .legal h2 { font-size: 20px; }
+    .contact .btn { width: 100%; text-align: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
   }
 </style>
 </head>
 <body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="https://zaimod.github.io/">
+        <img src="https://zaimod.github.io/apple-touch-icon.png" alt="" width="36" height="36">
+        Citygram
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="https://zaimod.github.io/citygram-support/">Support</a>
+        <a href="https://zaimod.github.io/citygram-support/privacy/" aria-current="page">Privacy</a>
+      </nav>
+    </div>
+    <div class="narrow">
+      <span class="eyebrow">Last updated 29 September 2026</span>
+      <h1>Privacy Policy</h1>
+      <p>What Citygram collects, why, and the choices you have.</p>
+    </div>
+  </div>
+</header>
+
 <main>
+  <div class="wrap narrow">
+    <div class="legal">
+    <p class="lede">Citygram is developed by Vladyslav Ivashchuk, a registered sole
+    proprietor (ФОП) based in Ukraine. Questions about this policy or your data can
+    be sent to <a href="mailto:ivashchukvladyslav@gmail.com">ivashchukvladyslav@gmail.com</a>.</p>
 
-  <div class="badge" aria-hidden="true">CG</div>
+      <nav class="toc" aria-label="Contents">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#information-we-collect">Information We Collect</a></li>
+          <li><a href="#third-party-services">Third-Party Services</a></li>
+          <li><a href="#your-choices">Your Choices</a></li>
+          <li><a href="#children-s-privacy">Children's Privacy</a></li>
+          <li><a href="#data-retention">Data Retention</a></li>
+          <li><a href="#your-rights-under-gdpr-eea-and-uk-users">Your Rights Under GDPR (EEA and UK Users)</a></li>
+          <li><a href="#international-data-transfers">International Data Transfers</a></li>
+          <li><a href="#united-states-privacy-rights">United States Privacy Rights</a></li>
+          <li><a href="#changes-to-this-policy">Changes to This Policy</a></li>
+          <li><a href="#contact-us">Contact Us</a></li>
+        </ol>
+      </nav>
 
-  <h1>Privacy Policy</h1>
-  <p class="meta">Citygram — Last updated 29 September 2026</p>
+    <h2 id="overview">1. Overview</h2>
 
-  <p class="lede">Citygram is developed by Vladyslav Ivashchuk, a registered sole
-  proprietor (ФОП) based in Ukraine. Questions about this policy or your data can
-  be sent to <a href="mailto:ivashchukvladyslav@gmail.com">ivashchukvladyslav@gmail.com</a>.</p>
+    <p>This Privacy Policy explains what information Citygram collects, how it is
+    used, and the choices you have. Citygram is a puzzle game where all content is
+    free to play. We collect the minimum data necessary to make the app work, keep
+    your progress, fix crashes, show ads, and process optional purchases.</p>
 
-  <h2>1. Overview</h2>
+    <h2 id="information-we-collect">2. Information We Collect</h2>
 
-  <p>This Privacy Policy explains what information Citygram collects, how it is
-  used, and the choices you have. Citygram is a puzzle game where all content is
-  free to play. We collect the minimum data necessary to make the app work, keep
-  your progress, fix crashes, show ads, and process optional purchases.</p>
+    <h3>Account &amp; Identity</h3>
 
-  <h2>2. Information We Collect</h2>
+    <p>Citygram does not require you to create an account or sign in. On first
+    launch, the app creates an anonymous, randomly generated identifier via Firebase
+    Anonymous Authentication. This identifier is not linked to your name, email, or
+    any personally identifiable information unless you choose to contact us directly
+    (for example, by email). On iOS the identifier is kept in the device Keychain, so
+    it survives reinstalling the app — this is what lets you restore your progress.</p>
 
-  <h3>Account &amp; Identity</h3>
+    <h3>Gameplay Data</h3>
 
-  <p>Citygram does not require you to create an account or sign in. On first
-  launch, the app creates an anonymous, randomly generated identifier via Firebase
-  Anonymous Authentication. This identifier is not linked to your name, email, or
-  any personally identifiable information unless you choose to contact us directly
-  (for example, by email). On iOS the identifier is kept in the device Keychain, so
-  it survives reinstalling the app — this is what lets you restore your progress.</p>
+    <p>We store your puzzle progress, completed cities, streaks, and app settings.
+    This data is saved locally on your device and backed up to Cloud Firestore,
+    associated only with your anonymous identifier.</p>
 
-  <h3>Gameplay Data</h3>
+    <h3>Usage Data</h3>
 
-  <p>We store your puzzle progress, completed cities, streaks, and app settings.
-  This data is saved locally on your device and backed up to Cloud Firestore,
-  associated only with your anonymous identifier.</p>
+    <p>Once per day that you open the app, we record the date you first used
+    Citygram, the date you last used it, your platform (iOS or Android), the app
+    version, and your device language, stored against your anonymous identifier in
+    Cloud Firestore. We use this only to count active players and see how many come
+    back. Citygram does not include a third-party analytics SDK.</p>
 
-  <h3>Usage Data</h3>
+    <h3>Crash Reports</h3>
 
-  <p>Once per day that you open the app, we record the date you first used
-  Citygram, the date you last used it, your platform (iOS or Android), the app
-  version, and your device language, stored against your anonymous identifier in
-  Cloud Firestore. We use this only to count active players and see how many come
-  back. Citygram does not include a third-party analytics SDK.</p>
+    <p>If the app crashes or hits an unexpected error, a crash report is sent to
+    Sentry so we can find and fix the problem. A report contains technical details
+    only — the error and where in the code it happened, your device model, operating
+    system version and app version. The app does not attach your anonymous
+    identifier or any other personal information to crash reports, and reports are
+    stored in Sentry's EU data region.</p>
 
-  <h3>Crash Reports</h3>
+    <h3>Advertising Data</h3>
 
-  <p>If the app crashes or hits an unexpected error, a crash report is sent to
-  Sentry so we can find and fix the problem. A report contains technical details
-  only — the error and where in the code it happened, your device model, operating
-  system version and app version. The app does not attach your anonymous
-  identifier or any other personal information to crash reports, and reports are
-  stored in Sentry's EU data region.</p>
+    <p>Citygram shows ads through Google AdMob to support free gameplay. AdMob may
+    collect device identifiers (such as the IDFA, if you grant tracking permission)
+    and usage data to serve and measure ads. On iOS, we request App Tracking
+    Transparency (ATT) permission before any tracking-related data is collected —
+    you can allow or deny this at any time in your device Settings.</p>
 
-  <h3>Advertising Data</h3>
+    <h3>Purchase Data</h3>
 
-  <p>Citygram shows ads through Google AdMob to support free gameplay. AdMob may
-  collect device identifiers (such as the IDFA, if you grant tracking permission)
-  and usage data to serve and measure ads. On iOS, we request App Tracking
-  Transparency (ATT) permission before any tracking-related data is collected —
-  you can allow or deny this at any time in your device Settings.</p>
+    <p>If you choose to purchase Remove Ads, the transaction is processed by Apple
+    and RevenueCat. RevenueCat receives a transaction identifier and your anonymous
+    app identifier to activate the corresponding entitlement — we do not receive or
+    store your payment details.</p>
 
-  <h3>Purchase Data</h3>
+    <h2 id="third-party-services">3. Third-Party Services</h2>
 
-  <p>If you choose to purchase Remove Ads, the transaction is processed by Apple
-  and RevenueCat. RevenueCat receives a transaction identifier and your anonymous
-  app identifier to activate the corresponding entitlement — we do not receive or
-  store your payment details.</p>
+    <p>Citygram relies on the following third-party services, each with their own
+    privacy practices:</p>
 
-  <h2>3. Third-Party Services</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Purpose</th>
+            <th>Privacy Policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Firebase (Google)</td>
+            <td>Anonymous authentication, progress backup, daily usage records</td>
+            <td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Sentry</td>
+            <td>Crash and error reporting</td>
+            <td><a href="https://sentry.io/privacy/">sentry.io/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Google AdMob</td>
+            <td>Displaying interstitial and rewarded ads</td>
+            <td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>RevenueCat</td>
+            <td>Managing in-app purchase entitlements</td>
+            <td><a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  <p>Citygram relies on the following third-party services, each with their own
-  privacy practices:</p>
+    <h2 id="your-choices">4. Your Choices</h2>
 
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Service</th>
-          <th>Purpose</th>
-          <th>Privacy Policy</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Firebase (Google)</td>
-          <td>Anonymous authentication, progress backup, daily usage records</td>
-          <td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td>
-        </tr>
-        <tr>
-          <td>Sentry</td>
-          <td>Crash and error reporting</td>
-          <td><a href="https://sentry.io/privacy/">sentry.io/privacy</a></td>
-        </tr>
-        <tr>
-          <td>Google AdMob</td>
-          <td>Displaying interstitial and rewarded ads</td>
-          <td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td>
-        </tr>
-        <tr>
-          <td>RevenueCat</td>
-          <td>Managing in-app purchase entitlements</td>
-          <td><a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <ul>
+      <li><strong>Advertising consent:</strong> in the EEA and UK, you can change or
+      withdraw your consent at any time under Settings → Privacy settings.</li>
+      <li><strong>App Tracking Transparency:</strong> you can allow or deny ad
+      tracking at any time via iOS Settings → Privacy &amp; Security → Tracking.</li>
+      <li><strong>Data deletion:</strong> email us to request deletion of any
+      cloud-stored data associated with your anonymous identifier.</li>
+      <li><strong>Remove Ads:</strong> purchasing Remove Ads stops all ad requests
+      and related ad-serving data collection going forward.</li>
+    </ul>
+
+    <h2 id="children-s-privacy">5. Children's Privacy</h2>
+
+    <p>Citygram is rated 4+ and does not knowingly collect personal information from
+    children. The app does not require sign-in, and no personally identifiable
+    information is collected during normal gameplay.</p>
+
+    <h2 id="data-retention">6. Data Retention</h2>
+
+    <p>Gameplay progress tied to your anonymous identifier is retained as long as
+    you use the app. If you uninstall the app, locally stored data is removed from
+    your device; cloud-stored data can be deleted on request. On iOS, the anonymous
+    identifier itself stays in the device Keychain after uninstalling. Crash reports
+    are kept by Sentry for a limited period under its standard retention policy and
+    then deleted automatically.</p>
+
+    <h2 id="your-rights-under-gdpr-eea-and-uk-users">7. Your Rights Under GDPR (EEA and UK Users)</h2>
+
+    <p>If you are located in the European Economic Area, the United Kingdom, or
+    Switzerland, the following applies to you.</p>
+
+    <h3>Data Controller</h3>
+
+    <p>The controller of your personal data is Vladyslav Ivashchuk, a registered
+    sole proprietor (ФОП) based in Ukraine, reachable at
+    <a href="mailto:ivashchukvladyslav@gmail.com">ivashchukvladyslav@gmail.com</a>.
+    Citygram has not appointed a Data Protection Officer, as it does not meet the
+    criteria under Article 37 GDPR.</p>
+
+    <h3>Legal Bases for Processing</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Purpose</th>
+            <th>Legal Basis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Saving gameplay progress and settings</td>
+            <td>Performance of a contract (Art. 6(1)(b)) — providing the game you
+            requested</td>
+          </tr>
+          <tr>
+            <td>Personalised advertising and related device identifiers</td>
+            <td>Consent (Art. 6(1)(a)), collected via the in-app consent form and,
+            on iOS, App Tracking Transparency</td>
+          </tr>
+          <tr>
+            <td>Non-personalised advertising</td>
+            <td>Legitimate interest (Art. 6(1)(f)) — funding a free-to-play app</td>
+          </tr>
+          <tr>
+            <td>Daily usage records and crash diagnostics</td>
+            <td>Consent, where required; otherwise legitimate interest in
+            maintaining and improving the app</td>
+          </tr>
+          <tr>
+            <td>Processing Remove Ads purchases</td>
+            <td>Performance of a contract (Art. 6(1)(b))</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Your Rights</h3>
+
+    <p>You have the right to:</p>
+
+    <ul>
+      <li><strong>Access</strong> — obtain confirmation of whether we process data
+      relating to you, and a copy of it.</li>
+      <li><strong>Rectification</strong> — have inaccurate data corrected.</li>
+      <li><strong>Erasure</strong> — request deletion of data associated with your
+      anonymous identifier.</li>
+      <li><strong>Restriction</strong> — request that we limit processing in certain
+      circumstances.</li>
+      <li><strong>Object</strong> — object to processing based on legitimate
+      interest, including profiling for advertising purposes.</li>
+      <li><strong>Data portability</strong> — receive your data in a structured,
+      machine-readable format.</li>
+      <li><strong>Withdraw consent</strong> — at any time, without affecting the
+      lawfulness of processing carried out before withdrawal.</li>
+    </ul>
+
+    <p>Because Citygram identifies you only by a randomly generated anonymous
+    identifier, which is not shown in the app, we may ask for details that help us
+    find your data — such as your device model and roughly when you started playing —
+    before we can act on a request. If we cannot link a request to specific data, we
+    will tell you. Under Article 11 GDPR, we are not required to collect additional
+    information solely to identify you.</p>
+
+    <p>Requests can be sent to
+    <a href="mailto:ivashchukvladyslav@gmail.com">ivashchukvladyslav@gmail.com</a>
+    and are answered within one month, as required by Article 12(3).</p>
+
+    <h3>Withdrawing Advertising Consent</h3>
+
+    <p>You can change or withdraw your advertising consent at any time in the app
+    under <strong>Settings → Privacy settings</strong>, which reopens the consent
+    form. On iOS you can also revoke tracking permission entirely via
+    <strong>Settings → Privacy &amp; Security → Tracking</strong>. Withdrawing
+    consent does not remove ads; it means you will see non-personalised ads
+    instead.</p>
+
+    <h3>Right to Lodge a Complaint</h3>
+
+    <p>If you believe your data has been handled unlawfully, you may lodge a
+    complaint with your national supervisory authority. A list of EEA authorities is
+    available at
+    <a href="https://edpb.europa.eu/about-edpb/board/members_en">edpb.europa.eu</a>.
+    UK users may contact the Information Commissioner's Office at
+    <a href="https://ico.org.uk">ico.org.uk</a>.</p>
+
+    <h2 id="international-data-transfers">8. International Data Transfers</h2>
+
+    <p>Citygram is operated from Ukraine, and the third-party services it relies on
+    are operated primarily from the United States. Ukraine is not currently the
+    subject of a European Commission adequacy decision.</p>
+
+    <p>In practice, the developer does not receive or export any directly
+    identifying personal data: access is limited to aggregate statistics, anonymous
+    identifiers and technical crash reports within the Firebase, AdMob, RevenueCat
+    and Sentry dashboards. Crash reports are stored in Sentry's EU data region.
+    Where personal data is transferred outside the EEA by those providers, the
+    transfers are governed by the providers' own safeguards — Standard Contractual
+    Clauses approved by the European Commission, and, where applicable,
+    certification under the EU–US Data Privacy Framework. Details are available in
+    each provider's privacy policy, linked in Section 3.</p>
+
+    <h2 id="united-states-privacy-rights">9. United States Privacy Rights</h2>
+
+    <p>If you are a resident of California, or of another U.S. state with
+    comprehensive privacy legislation, the following applies to you.</p>
+
+    <p>Citygram does not sell personal information for money. However, allowing
+    advertising partners to use device identifiers for personalised advertising may
+    qualify as "selling" or "sharing" personal information for cross-context
+    behavioural advertising under the California Consumer Privacy Act as amended by
+    the CPRA, and under comparable state laws.</p>
+
+    <p>You may opt out at any time in the app under
+    <strong>Settings → Privacy settings</strong>, or by denying App Tracking
+    Transparency permission on iOS. Opting out does not remove ads and does not
+    degrade any other part of the app.</p>
+
+    <p>Subject to verification, you also have the right to know what personal
+    information is collected and how it is used, to request deletion or correction,
+    and not to be discriminated against for exercising any of these rights. Requests
+    can be sent to
+    <a href="mailto:ivashchukvladyslav@gmail.com">ivashchukvladyslav@gmail.com</a>.</p>
+
+    <p>Citygram does not knowingly collect or process personal information of
+    consumers under 16 years of age for advertising purposes.</p>
+
+    <h2 id="changes-to-this-policy">10. Changes to This Policy</h2>
+
+    <p>We may update this Privacy Policy from time to time. Material changes will be
+    reflected by updating the "Last updated" date at the top of this page.</p>
+
+    <h2 id="contact-us">11. Contact Us</h2>
+
+    <p>If you have questions about this Privacy Policy or how your data is handled,
+    contact us at
+    <a href="mailto:ivashchukvladyslav@gmail.com">ivashchukvladyslav@gmail.com</a>.</p>
+    </div>
   </div>
-
-  <h2>4. Your Choices</h2>
-
-  <ul>
-    <li><strong>Advertising consent:</strong> in the EEA and UK, you can change or
-    withdraw your consent at any time under Settings → Privacy settings.</li>
-    <li><strong>App Tracking Transparency:</strong> you can allow or deny ad
-    tracking at any time via iOS Settings → Privacy &amp; Security → Tracking.</li>
-    <li><strong>Data deletion:</strong> email us to request deletion of any
-    cloud-stored data associated with your anonymous identifier.</li>
-    <li><strong>Remove Ads:</strong> purchasing Remove Ads stops all ad requests
-    and related ad-serving data collection going forward.</li>
-  </ul>
-
-  <h2>5. Children's Privacy</h2>
-
-  <p>Citygram is rated 4+ and does not knowingly collect personal information from
-  children. The app does not require sign-in, and no personally identifiable
-  information is collected during normal gameplay.</p>
-
-  <h2>6. Data Retention</h2>
-
-  <p>Gameplay progress tied to your anonymous identifier is retained as long as
-  you use the app. If you uninstall the app, locally stored data is removed from
-  your device; cloud-stored data can be deleted on request. On iOS, the anonymous
-  identifier itself stays in the device Keychain after uninstalling. Crash reports
-  are kept by Sentry for a limited period under its standard retention policy and
-  then deleted automatically.</p>
-
-  <h2>7. Your Rights Under GDPR (EEA and UK Users)</h2>
-
-  <p>If you are located in the European Economic Area, the United Kingdom, or
-  Switzerland, the following applies to you.</p>
-
-  <h3>Data Controller</h3>
-
-  <p>The controller of your personal data is Vladyslav Ivashchuk, a registered
-  sole proprietor (ФОП) based in Ukraine, reachable at
-  <a href="mailto:ivashchukvladyslav@gmail.com">ivashchukvladyslav@gmail.com</a>.
-  Citygram has not appointed a Data Protection Officer, as it does not meet the
-  criteria under Article 37 GDPR.</p>
-
-  <h3>Legal Bases for Processing</h3>
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Purpose</th>
-          <th>Legal Basis</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Saving gameplay progress and settings</td>
-          <td>Performance of a contract (Art. 6(1)(b)) — providing the game you
-          requested</td>
-        </tr>
-        <tr>
-          <td>Personalised advertising and related device identifiers</td>
-          <td>Consent (Art. 6(1)(a)), collected via the in-app consent form and,
-          on iOS, App Tracking Transparency</td>
-        </tr>
-        <tr>
-          <td>Non-personalised advertising</td>
-          <td>Legitimate interest (Art. 6(1)(f)) — funding a free-to-play app</td>
-        </tr>
-        <tr>
-          <td>Daily usage records and crash diagnostics</td>
-          <td>Consent, where required; otherwise legitimate interest in
-          maintaining and improving the app</td>
-        </tr>
-        <tr>
-          <td>Processing Remove Ads purchases</td>
-          <td>Performance of a contract (Art. 6(1)(b))</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3>Your Rights</h3>
-
-  <p>You have the right to:</p>
-
-  <ul>
-    <li><strong>Access</strong> — obtain confirmation of whether we process data
-    relating to you, and a copy of it.</li>
-    <li><strong>Rectification</strong> — have inaccurate data corrected.</li>
-    <li><strong>Erasure</strong> — request deletion of data associated with your
-    anonymous identifier.</li>
-    <li><strong>Restriction</strong> — request that we limit processing in certain
-    circumstances.</li>
-    <li><strong>Object</strong> — object to processing based on legitimate
-    interest, including profiling for advertising purposes.</li>
-    <li><strong>Data portability</strong> — receive your data in a structured,
-    machine-readable format.</li>
-    <li><strong>Withdraw consent</strong> — at any time, without affecting the
-    lawfulness of processing carried out before withdrawal.</li>
-  </ul>
-
-  <p>Because Citygram identifies you only by a randomly generated anonymous
-  identifier, which is not shown in the app, we may ask for details that help us
-  find your data — such as your device model and roughly when you started playing —
-  before we can act on a request. If we cannot link a request to specific data, we
-  will tell you. Under Article 11 GDPR, we are not required to collect additional
-  information solely to identify you.</p>
-
-  <p>Requests can be sent to
-  <a href="mailto:ivashchukvladyslav@gmail.com">ivashchukvladyslav@gmail.com</a>
-  and are answered within one month, as required by Article 12(3).</p>
-
-  <h3>Withdrawing Advertising Consent</h3>
-
-  <p>You can change or withdraw your advertising consent at any time in the app
-  under <strong>Settings → Privacy settings</strong>, which reopens the consent
-  form. On iOS you can also revoke tracking permission entirely via
-  <strong>Settings → Privacy &amp; Security → Tracking</strong>. Withdrawing
-  consent does not remove ads; it means you will see non-personalised ads
-  instead.</p>
-
-  <h3>Right to Lodge a Complaint</h3>
-
-  <p>If you believe your data has been handled unlawfully, you may lodge a
-  complaint with your national supervisory authority. A list of EEA authorities is
-  available at
-  <a href="https://edpb.europa.eu/about-edpb/board/members_en">edpb.europa.eu</a>.
-  UK users may contact the Information Commissioner's Office at
-  <a href="https://ico.org.uk">ico.org.uk</a>.</p>
-
-  <h2>8. International Data Transfers</h2>
-
-  <p>Citygram is operated from Ukraine, and the third-party services it relies on
-  are operated primarily from the United States. Ukraine is not currently the
-  subject of a European Commission adequacy decision.</p>
-
-  <p>In practice, the developer does not receive or export any directly
-  identifying personal data: access is limited to aggregate statistics, anonymous
-  identifiers and technical crash reports within the Firebase, AdMob, RevenueCat
-  and Sentry dashboards. Crash reports are stored in Sentry's EU data region.
-  Where personal data is transferred outside the EEA by those providers, the
-  transfers are governed by the providers' own safeguards — Standard Contractual
-  Clauses approved by the European Commission, and, where applicable,
-  certification under the EU–US Data Privacy Framework. Details are available in
-  each provider's privacy policy, linked in Section 3.</p>
-
-  <h2>9. United States Privacy Rights</h2>
-
-  <p>If you are a resident of California, or of another U.S. state with
-  comprehensive privacy legislation, the following applies to you.</p>
-
-  <p>Citygram does not sell personal information for money. However, allowing
-  advertising partners to use device identifiers for personalised advertising may
-  qualify as "selling" or "sharing" personal information for cross-context
-  behavioural advertising under the California Consumer Privacy Act as amended by
-  the CPRA, and under comparable state laws.</p>
-
-  <p>You may opt out at any time in the app under
-  <strong>Settings → Privacy settings</strong>, or by denying App Tracking
-  Transparency permission on iOS. Opting out does not remove ads and does not
-  degrade any other part of the app.</p>
-
-  <p>Subject to verification, you also have the right to know what personal
-  information is collected and how it is used, to request deletion or correction,
-  and not to be discriminated against for exercising any of these rights. Requests
-  can be sent to
-  <a href="mailto:ivashchukvladyslav@gmail.com">ivashchukvladyslav@gmail.com</a>.</p>
-
-  <p>Citygram does not knowingly collect or process personal information of
-  consumers under 16 years of age for advertising purposes.</p>
-
-  <h2>10. Changes to This Policy</h2>
-
-  <p>We may update this Privacy Policy from time to time. Material changes will be
-  reflected by updating the "Last updated" date at the top of this page.</p>
-
-  <h2>11. Contact Us</h2>
-
-  <p>If you have questions about this Privacy Policy or how your data is handled,
-  contact us at
-  <a href="mailto:ivashchukvladyslav@gmail.com">ivashchukvladyslav@gmail.com</a>.</p>
-
-  <footer>
-    <p><strong>Citygram</strong> is developed by Vladyslav Ivashchuk, a registered
-    sole proprietor (ФОП) based in Ukraine.</p>
-    <p>© 2026 Vladyslav Ivashchuk. All rights reserved.</p>
-  </footer>
-
 </main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <p>Citygram is developed by Vladyslav Ivashchuk, a registered sole proprietor (ФОП) based in Ukraine.</p>
+      <p>© 2026 Vladyslav Ivashchuk. All rights reserved.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="https://zaimod.github.io/">Home</a>
+      <a href="https://zaimod.github.io/citygram-support/">Support</a>
+      <a href="https://zaimod.github.io/citygram-support/privacy/">Privacy Policy</a>
+      <a href="mailto:ivashchukvladyslav@gmail.com">Contact</a>
+    </nav>
+  </div>
+</footer>
+
 </body>
 </html>
