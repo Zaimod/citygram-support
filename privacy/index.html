@@ -60,28 +60,8 @@
       radial-gradient(ellipse 60% 90% at 25% 30%, rgba(127,119,221,0.28), transparent 70%),
       linear-gradient(170deg, var(--night) 0%, var(--night-deep) 100%);
     color: #F1F0FA;
-    padding: 20px 0 56px;
+    padding: 56px 0 56px;
   }
-  .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 48px;
-  }
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: inherit;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 18px;
-  }
-  .brand img { width: 36px; height: 36px; border-radius: 9px; }
-  .nav-links { display: flex; gap: 20px; font-size: 15px; }
-  .nav-links a { color: #C9C6E8; text-decoration: none; }
-  .nav-links a:hover, .nav-links a[aria-current="page"] { color: #FFFFFF; }
-  .nav-links a[aria-current="page"] { font-weight: 600; }
   .eyebrow {
     display: inline-block;
     font-size: 13px;
@@ -223,7 +203,7 @@
     font-size: 23px;
     line-height: 1.3;
     letter-spacing: -0.01em;
-    scroll-margin-top: 16px;
+    scroll-margin-top: 80px;
   }
   .legal h3 {
     margin: 28px 0 8px;
@@ -273,9 +253,7 @@
 
   @media (max-width: 600px) {
     .wrap { padding: 0 16px; }
-    .nav { margin-bottom: 36px; }
-    .nav-links { gap: 16px; }
-    .hero { padding-bottom: 44px; }
+    .hero { padding-top: 36px; padding-bottom: 44px; }
     .hero p { font-size: 17px; }
     main { padding: 40px 0 56px; }
     .legal { font-size: 16px; }
@@ -287,22 +265,92 @@
     html { scroll-behavior: auto; }
     * { transition: none !important; }
   }
+
+  /* ─── Top bar (shared by all Citygram pages) ─────────── */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(27,21,72,0.88);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    backdrop-filter: saturate(160%) blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    color: #F1F0FA;
+  }
+  .topbar .wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 60px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: auto;
+    color: inherit;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+  }
+  .brand img { width: 32px; height: 32px; border-radius: 8px; }
+  .menu { display: flex; gap: 4px; }
+  .menu a {
+    color: #C9C6E8;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  .menu a:hover { color: #FFFFFF; background: rgba(255,255,255,0.08); }
+  .menu a[aria-current="page"] { color: #FFFFFF; background: rgba(255,255,255,0.14); font-weight: 600; }
+  .get-app {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FFFFFF;
+    color: #1B1548;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 7px 14px 7px 11px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .get-app:hover { filter: brightness(0.94); }
+  .get-app svg { width: 16px; height: 16px; }
+  @media (max-width: 600px) {
+    .topbar .wrap { gap: 6px; height: 56px; }
+    .brand span { display: none; }
+    .menu a { font-size: 14px; padding: 6px 10px; }
+    .get-app { padding: 8px; }
+    .get-app span { display: none; }
+  }
 </style>
 </head>
 <body>
 
-<header class="hero">
+<header class="topbar">
   <div class="wrap">
-    <div class="nav">
-      <a class="brand" href="https://zaimod.github.io/">
-        <img src="https://zaimod.github.io/apple-touch-icon.png" alt="" width="36" height="36">
-        Citygram
-      </a>
-      <nav class="nav-links" aria-label="Main">
+    <a class="brand" href="https://zaimod.github.io/">
+      <img src="https://zaimod.github.io/apple-touch-icon.png" alt="" width="32" height="32">
+      <span>Citygram</span>
+    </a>
+    <nav class="menu" aria-label="Main">
+        <a href="https://zaimod.github.io/">Home</a>
         <a href="https://zaimod.github.io/citygram-support/">Support</a>
         <a href="https://zaimod.github.io/citygram-support/privacy/" aria-current="page">Privacy</a>
-      </nav>
-    </div>
+    </nav>
+    <a class="get-app" href="https://apps.apple.com/app/id6781027728" aria-label="Get Citygram on the App Store">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 12.63c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-2.99-.79-1.54.02-2.96.9-3.75 2.27-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.99.72 1.24-.02 2.02-1.12 2.77-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.88c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg><span>App Store</span>
+    </a>
+  </div>
+</header>
+
+
+<header class="hero">
+  <div class="wrap">
     <div class="narrow">
       <span class="eyebrow">Last updated 29 September 2026</span>
       <h1>Privacy Policy</h1>
